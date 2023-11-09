@@ -12,17 +12,15 @@ struct ItemDetail: View {
     
     var body: some View {
         VStack {
-            Text(item.name)
-                .font(.largeTitle)
             Divider()
-            DatePicker("Date \(item.name) will die", selection: .constant(Date()))
-            TextField("\(item.name) will die from a \(item.death)", text: .constant(String()))
+            DatePicker("...will die in", selection: .constant(Date()))
+            TextField("...from a \(item.death)", text: .constant(String()))
                 .padding(EdgeInsets())
             Spacer()
         }
         .padding()
         .navigationTitle(item.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
